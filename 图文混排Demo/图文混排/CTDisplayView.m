@@ -9,6 +9,8 @@
 #import "CTDisplayView.h"
 #import "CoreTextUtils.h"
 #import "MagnifiterView.h"
+#import "SDWebImageManager.h"
+
 
 NSString *const CTDisplayViewImagePressedNotification = @"CTDisplayViewImagePressedNotification";
 NSString *const CTDisplayViewLinkPressedNotification = @"CTDisplayViewLinkPressedNotification";
@@ -59,6 +61,11 @@ typedef enum CTDisplayViewState : NSInteger {
 - (void)setData:(CoreTextData *)data {
     _data = data;
     self.state = CTDisplayViewStateNormal;
+    for (CoreTextImageData * imageData in self.data.imageArray) {
+        [[SDWebImageManager sharedManager] downloadImageWithURL:[NSURL URLWithString:imageData.name] options:0 progress:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
+            [self setNeedsDisplay];
+        }];
+    }
 }
 
 - (void)setupAnchors {
@@ -151,6 +158,7 @@ typedef enum CTDisplayViewState : NSInteger {
             [self hideMenuController];
         }
     }
+    
     [self setNeedsDisplay];
 }
 
@@ -211,11 +219,24 @@ typedef enum CTDisplayViewState : NSInteger {
     CTFrameDraw(self.data.ctFrame, context);
     
     for (CoreTextImageData * imageData in self.data.imageArray) {
-        UIImage *image = [UIImage imageNamed:imageData.name];
-        if (image) {
-            CGContextDrawImage(context, imageData.imagePosition, image.CGImage);
+        UIImage *scaleImage;
+        @autoreleasepool {
+            UIImage *image = [[[SDWebImageManager sharedManager] imageCache] imageFromDiskCacheForKey:imageData.name];
+            scaleImage = [self image:image scaleWithSize:imageData.imagePosition.size];
+            [[SDWebImageManager sharedManager].imageCache clearMemory];
+        }
+        if (scaleImage) {
+            CGContextDrawImage(context, imageData.imagePosition, scaleImage.CGImage);
         }
     }
+}
+
+- (UIImage *)image:(UIImage *)image scaleWithSize:(CGSize)size{
+    UIGraphicsBeginImageContext(size);
+    [image drawInRect:CGRectMake(0, 0, size.width, size.height)];
+    UIImage *img = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return img;
 }
 
 - (void)userTapGestureDetected:(UIGestureRecognizer *)recognizer {

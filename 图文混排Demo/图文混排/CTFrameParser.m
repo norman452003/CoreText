@@ -214,7 +214,11 @@ static CGFloat widthCallback(void* ref){
         return [UIColor redColor];
     } else if ([name isEqualToString:@"black"]) {
         return [UIColor blackColor];
-    } else {
+    } else if ([name isEqualToString:@"orange"]) {
+        return [UIColor orangeColor];
+    }else if ([name isEqualToString:@"green"]) {
+        return [UIColor greenColor];
+    }else {
         return nil;
     }
 }
