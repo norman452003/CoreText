@@ -14,6 +14,16 @@
 		7C7A1C0D1B9D6FBA00EA49D5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C7A1C0C1B9D6FBA00EA49D5 /* Images.xcassets */; };
 		7C7A1C101B9D6FBA00EA49D5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C7A1C0E1B9D6FBA00EA49D5 /* LaunchScreen.xib */; };
 		7C7A1C1C1B9D6FBA00EA49D5 /* ____DemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C7A1C1B1B9D6FBA00EA49D5 /* ____DemoTests.m */; };
+		7C7A1C3A1B9D70A200EA49D5 /* content.json in Resources */ = {isa = PBXBuildFile; fileRef = 7C7A1C261B9D70A200EA49D5 /* content.json */; };
+		7C7A1C3B1B9D70A200EA49D5 /* CoreTextData.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C7A1C281B9D70A200EA49D5 /* CoreTextData.m */; };
+		7C7A1C3C1B9D70A200EA49D5 /* CoreTextImageData.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C7A1C2B1B9D70A200EA49D5 /* CoreTextImageData.m */; };
+		7C7A1C3D1B9D70A200EA49D5 /* CoreTextLinkData.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C7A1C2D1B9D70A200EA49D5 /* CoreTextLinkData.m */; };
+		7C7A1C3E1B9D70A200EA49D5 /* CoreTextUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C7A1C2F1B9D70A200EA49D5 /* CoreTextUtils.m */; };
+		7C7A1C3F1B9D70A200EA49D5 /* CTDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C7A1C311B9D70A200EA49D5 /* CTDisplayView.m */; };
+		7C7A1C401B9D70A200EA49D5 /* CTFrameParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C7A1C331B9D70A200EA49D5 /* CTFrameParser.m */; };
+		7C7A1C411B9D70A200EA49D5 /* CTFrameParserConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C7A1C351B9D70A200EA49D5 /* CTFrameParserConfig.m */; };
+		7C7A1C421B9D70A200EA49D5 /* MagnifiterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C7A1C371B9D70A200EA49D5 /* MagnifiterView.m */; };
+		7C7A1C431B9D70A200EA49D5 /* UIView+frameAdjust.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C7A1C391B9D70A200EA49D5 /* UIView+frameAdjust.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +50,26 @@
 		7C7A1C151B9D6FBA00EA49D5 /* 图文混排DemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "图文混排DemoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C7A1C1A1B9D6FBA00EA49D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7C7A1C1B1B9D6FBA00EA49D5 /* ____DemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "____DemoTests.m"; sourceTree = "<group>"; };
+		7C7A1C261B9D70A200EA49D5 /* content.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = content.json; sourceTree = "<group>"; };
+		7C7A1C271B9D70A200EA49D5 /* CoreTextData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreTextData.h; sourceTree = "<group>"; };
+		7C7A1C281B9D70A200EA49D5 /* CoreTextData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreTextData.m; sourceTree = "<group>"; };
+		7C7A1C291B9D70A200EA49D5 /* CoreTextDemo-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CoreTextDemo-Prefix.pch"; sourceTree = "<group>"; };
+		7C7A1C2A1B9D70A200EA49D5 /* CoreTextImageData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreTextImageData.h; sourceTree = "<group>"; };
+		7C7A1C2B1B9D70A200EA49D5 /* CoreTextImageData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreTextImageData.m; sourceTree = "<group>"; };
+		7C7A1C2C1B9D70A200EA49D5 /* CoreTextLinkData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreTextLinkData.h; sourceTree = "<group>"; };
+		7C7A1C2D1B9D70A200EA49D5 /* CoreTextLinkData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreTextLinkData.m; sourceTree = "<group>"; };
+		7C7A1C2E1B9D70A200EA49D5 /* CoreTextUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreTextUtils.h; sourceTree = "<group>"; };
+		7C7A1C2F1B9D70A200EA49D5 /* CoreTextUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreTextUtils.m; sourceTree = "<group>"; };
+		7C7A1C301B9D70A200EA49D5 /* CTDisplayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTDisplayView.h; sourceTree = "<group>"; };
+		7C7A1C311B9D70A200EA49D5 /* CTDisplayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTDisplayView.m; sourceTree = "<group>"; };
+		7C7A1C321B9D70A200EA49D5 /* CTFrameParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTFrameParser.h; sourceTree = "<group>"; };
+		7C7A1C331B9D70A200EA49D5 /* CTFrameParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTFrameParser.m; sourceTree = "<group>"; };
+		7C7A1C341B9D70A200EA49D5 /* CTFrameParserConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTFrameParserConfig.h; sourceTree = "<group>"; };
+		7C7A1C351B9D70A200EA49D5 /* CTFrameParserConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTFrameParserConfig.m; sourceTree = "<group>"; };
+		7C7A1C361B9D70A200EA49D5 /* MagnifiterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagnifiterView.h; sourceTree = "<group>"; };
+		7C7A1C371B9D70A200EA49D5 /* MagnifiterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagnifiterView.m; sourceTree = "<group>"; };
+		7C7A1C381B9D70A200EA49D5 /* UIView+frameAdjust.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+frameAdjust.h"; sourceTree = "<group>"; };
+		7C7A1C391B9D70A200EA49D5 /* UIView+frameAdjust.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+frameAdjust.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +111,7 @@
 		7C7A1BFE1B9D6FBA00EA49D5 /* 图文混排Demo */ = {
 			isa = PBXGroup;
 			children = (
+				7C7A1C251B9D70A200EA49D5 /* 图文混排 */,
 				7C7A1C031B9D6FBA00EA49D5 /* AppDelegate.h */,
 				7C7A1C041B9D6FBA00EA49D5 /* AppDelegate.m */,
 				7C7A1C061B9D6FBA00EA49D5 /* ViewController.h */,
@@ -117,6 +148,33 @@
 				7C7A1C1A1B9D6FBA00EA49D5 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7C7A1C251B9D70A200EA49D5 /* 图文混排 */ = {
+			isa = PBXGroup;
+			children = (
+				7C7A1C261B9D70A200EA49D5 /* content.json */,
+				7C7A1C271B9D70A200EA49D5 /* CoreTextData.h */,
+				7C7A1C281B9D70A200EA49D5 /* CoreTextData.m */,
+				7C7A1C291B9D70A200EA49D5 /* CoreTextDemo-Prefix.pch */,
+				7C7A1C2A1B9D70A200EA49D5 /* CoreTextImageData.h */,
+				7C7A1C2B1B9D70A200EA49D5 /* CoreTextImageData.m */,
+				7C7A1C2C1B9D70A200EA49D5 /* CoreTextLinkData.h */,
+				7C7A1C2D1B9D70A200EA49D5 /* CoreTextLinkData.m */,
+				7C7A1C2E1B9D70A200EA49D5 /* CoreTextUtils.h */,
+				7C7A1C2F1B9D70A200EA49D5 /* CoreTextUtils.m */,
+				7C7A1C301B9D70A200EA49D5 /* CTDisplayView.h */,
+				7C7A1C311B9D70A200EA49D5 /* CTDisplayView.m */,
+				7C7A1C321B9D70A200EA49D5 /* CTFrameParser.h */,
+				7C7A1C331B9D70A200EA49D5 /* CTFrameParser.m */,
+				7C7A1C341B9D70A200EA49D5 /* CTFrameParserConfig.h */,
+				7C7A1C351B9D70A200EA49D5 /* CTFrameParserConfig.m */,
+				7C7A1C361B9D70A200EA49D5 /* MagnifiterView.h */,
+				7C7A1C371B9D70A200EA49D5 /* MagnifiterView.m */,
+				7C7A1C381B9D70A200EA49D5 /* UIView+frameAdjust.h */,
+				7C7A1C391B9D70A200EA49D5 /* UIView+frameAdjust.m */,
+			);
+			path = "图文混排";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,6 +260,7 @@
 				7C7A1C0B1B9D6FBA00EA49D5 /* Main.storyboard in Resources */,
 				7C7A1C101B9D6FBA00EA49D5 /* LaunchScreen.xib in Resources */,
 				7C7A1C0D1B9D6FBA00EA49D5 /* Images.xcassets in Resources */,
+				7C7A1C3A1B9D70A200EA49D5 /* content.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,8 +279,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C7A1C081B9D6FBA00EA49D5 /* ViewController.m in Sources */,
+				7C7A1C431B9D70A200EA49D5 /* UIView+frameAdjust.m in Sources */,
+				7C7A1C3E1B9D70A200EA49D5 /* CoreTextUtils.m in Sources */,
+				7C7A1C3F1B9D70A200EA49D5 /* CTDisplayView.m in Sources */,
+				7C7A1C411B9D70A200EA49D5 /* CTFrameParserConfig.m in Sources */,
+				7C7A1C3C1B9D70A200EA49D5 /* CoreTextImageData.m in Sources */,
+				7C7A1C3B1B9D70A200EA49D5 /* CoreTextData.m in Sources */,
 				7C7A1C051B9D6FBA00EA49D5 /* AppDelegate.m in Sources */,
 				7C7A1C021B9D6FBA00EA49D5 /* main.m in Sources */,
+				7C7A1C3D1B9D70A200EA49D5 /* CoreTextLinkData.m in Sources */,
+				7C7A1C421B9D70A200EA49D5 /* MagnifiterView.m in Sources */,
+				7C7A1C401B9D70A200EA49D5 /* CTFrameParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,6 +417,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "图文混排Demo/图文混排/CoreTextDemo-Prefix.pch";
 				INFOPLIST_FILE = "图文混排Demo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -359,6 +428,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "图文混排Demo/图文混排/CoreTextDemo-Prefix.pch";
 				INFOPLIST_FILE = "图文混排Demo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
