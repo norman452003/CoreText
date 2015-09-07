@@ -40,6 +40,8 @@
 		7C7A1C731B9D7AB500EA49D5 /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C7A1C611B9D7AB500EA49D5 /* UIImageView+HighlightedWebCache.m */; };
 		7C7A1C741B9D7AB500EA49D5 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C7A1C631B9D7AB500EA49D5 /* UIImageView+WebCache.m */; };
 		7C7A1C751B9D7AB500EA49D5 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C7A1C651B9D7AB500EA49D5 /* UIView+WebCacheOperation.m */; };
+		7C7A1C781B9D82D000EA49D5 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C7A1C771B9D82D000EA49D5 /* ImageViewController.m */; };
+		7C7A1C7B1B9D860400EA49D5 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C7A1C7A1B9D860400EA49D5 /* WebViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +121,10 @@
 		7C7A1C631B9D7AB500EA49D5 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		7C7A1C641B9D7AB500EA49D5 /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		7C7A1C651B9D7AB500EA49D5 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
+		7C7A1C761B9D82D000EA49D5 /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageViewController.h; path = "图文混排/ImageViewController.h"; sourceTree = "<group>"; };
+		7C7A1C771B9D82D000EA49D5 /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageViewController.m; path = "图文混排/ImageViewController.m"; sourceTree = "<group>"; };
+		7C7A1C791B9D860400EA49D5 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		7C7A1C7A1B9D860400EA49D5 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +172,10 @@
 				7C7A1C041B9D6FBA00EA49D5 /* AppDelegate.m */,
 				7C7A1C061B9D6FBA00EA49D5 /* ViewController.h */,
 				7C7A1C071B9D6FBA00EA49D5 /* ViewController.m */,
+				7C7A1C761B9D82D000EA49D5 /* ImageViewController.h */,
+				7C7A1C771B9D82D000EA49D5 /* ImageViewController.m */,
+				7C7A1C791B9D860400EA49D5 /* WebViewController.h */,
+				7C7A1C7A1B9D860400EA49D5 /* WebViewController.m */,
 				7C7A1C091B9D6FBA00EA49D5 /* Main.storyboard */,
 				7C7A1C0C1B9D6FBA00EA49D5 /* Images.xcassets */,
 				7C7A1C0E1B9D6FBA00EA49D5 /* LaunchScreen.xib */,
@@ -369,6 +379,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C7A1C081B9D6FBA00EA49D5 /* ViewController.m in Sources */,
+				7C7A1C7B1B9D860400EA49D5 /* WebViewController.m in Sources */,
 				7C7A1C431B9D70A200EA49D5 /* UIView+frameAdjust.m in Sources */,
 				7C7A1C721B9D7AB500EA49D5 /* UIImage+WebP.m in Sources */,
 				7C7A1C3E1B9D70A200EA49D5 /* CoreTextUtils.m in Sources */,
@@ -393,6 +404,7 @@
 				7C7A1C661B9D7AB500EA49D5 /* MKAnnotationView+WebCache.m in Sources */,
 				7C7A1C741B9D7AB500EA49D5 /* UIImageView+WebCache.m in Sources */,
 				7C7A1C751B9D7AB500EA49D5 /* UIView+WebCacheOperation.m in Sources */,
+				7C7A1C781B9D82D000EA49D5 /* ImageViewController.m in Sources */,
 				7C7A1C6D1B9D7AB500EA49D5 /* SDWebImageManager.m in Sources */,
 				7C7A1C421B9D70A200EA49D5 /* MagnifiterView.m in Sources */,
 				7C7A1C401B9D70A200EA49D5 /* CTFrameParser.m in Sources */,

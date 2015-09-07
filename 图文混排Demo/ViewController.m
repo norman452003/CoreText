@@ -11,6 +11,10 @@
 #import "CoreTextData.h"
 #import "CTFrameParser.h"
 #import "CTFrameParserConfig.h"
+#import "SDWebImageManager.h"
+#import "ImageViewController.h"
+#import "CoreTextLinkData.h"
+#import "WebViewController.h"
 
 @interface ViewController ()
 @property (nonatomic,weak) CTDisplayView *displayView;
@@ -23,6 +27,7 @@
     
     [self setUpDisplayView];
     [self setUpUserInterface];
+    [self setUpNotification];
 }
 
 - (void)setUpDisplayView{
@@ -45,7 +50,7 @@
     
     NSDictionary *dict2 = @{
                             @"color" : @"black",
-                            @"content" : @"测试一下看行不行能不能自动换行看下还有没有其他的bug在 ",
+                            @"content" : @"测试一下看行不行能不能自动换行看下还有没有其他的bug在😊 ",
                             @"size" : @18,
                             @"type" : @"txt"
                             };
@@ -93,6 +98,28 @@
 - (NSString *)stringWithObj:(id)obj{
     NSData *data = [NSJSONSerialization dataWithJSONObject:obj options:0 error:NULL];
     return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+}
+
+- (void)setUpNotification{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(imagePressed:) name:CTDisplayViewImagePressedNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(linkPressed:) name:CTDisplayViewLinkPressedNotification object:nil];
+}
+
+- (void)imagePressed:(NSNotification *)note{
+    CoreTextImageData *imageData = note.userInfo[@"imageData"];
+    UIImage *image = [[SDWebImageManager sharedManager].imageCache imageFromDiskCacheForKey:imageData.name];
+    ImageViewController *imageVC = [[ImageViewController alloc] init];
+    imageVC.image = image;
+    UINavigationController *naviVC = [[UINavigationController alloc] initWithRootViewController:imageVC];
+    [self presentViewController:naviVC animated:YES completion:nil];
+}
+
+- (void)linkPressed:(NSNotification *)note{
+    CoreTextLinkData *linkData = note.userInfo[@"linkData"];
+    WebViewController *webViewVC = [[WebViewController alloc] init];
+    webViewVC.urlStr = linkData.url;
+    UINavigationController *naviVC = [[UINavigationController alloc] initWithRootViewController:webViewVC];
+    [self presentViewController:naviVC animated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {
