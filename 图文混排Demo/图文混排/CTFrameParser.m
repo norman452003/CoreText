@@ -45,7 +45,7 @@ static CGFloat widthCallback(void* ref){
     dict[(id)kCTForegroundColorAttributeName] = (id)textColor.CGColor;
     dict[(id)kCTFontAttributeName] = (__bridge id)fontRef;
     dict[(id)kCTParagraphStyleAttributeName] = (__bridge id)theParagraphRef;
-    
+
     CFRelease(theParagraphRef);
     CFRelease(fontRef);
     return dict;
@@ -84,7 +84,7 @@ static CGFloat widthCallback(void* ref){
                     // 创建 CoreTextImageData
                     CoreTextImageData *imageData = [[CoreTextImageData alloc] init];
                     imageData.name = dict[@"name"];
-                    imageData.position = [result length];
+                    imageData.position = (int)[result length];
                     [imageArray addObject:imageData];
                     // 创建空白占位符，并且设置它的CTRunDelegate信息
                     NSAttributedString *as = [self parseImageDataFromNSDictionary:dict config:config];
@@ -204,6 +204,7 @@ static CGFloat widthCallback(void* ref){
         CFRelease(fontRef);
     }
     NSString *content = dict[@"content"];
+    //对于普通的文字在NSAttributedString 的初始化方法中把文字内容和属性传入
     return [[NSAttributedString alloc] initWithString:content attributes:attributes];
 }
 

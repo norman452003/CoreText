@@ -42,6 +42,9 @@
 		7C7A1C751B9D7AB500EA49D5 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C7A1C651B9D7AB500EA49D5 /* UIView+WebCacheOperation.m */; };
 		7C7A1C781B9D82D000EA49D5 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C7A1C771B9D82D000EA49D5 /* ImageViewController.m */; };
 		7C7A1C7B1B9D860400EA49D5 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C7A1C7A1B9D860400EA49D5 /* WebViewController.m */; };
+		7C7CBBBB1B9ED0A1002EC325 /* CTTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C7CBBBA1B9ED0A1002EC325 /* CTTableViewCell.m */; };
+		7CE1D1E01B9FBF1300C8ABE8 /* CTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CE1D1DF1B9FBF1300C8ABE8 /* CTViewController.m */; };
+		7CE1D1E71B9FC15400C8ABE8 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CE1D1E61B9FC15400C8ABE8 /* MainViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +128,12 @@
 		7C7A1C771B9D82D000EA49D5 /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageViewController.m; path = "图文混排/ImageViewController.m"; sourceTree = "<group>"; };
 		7C7A1C791B9D860400EA49D5 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		7C7A1C7A1B9D860400EA49D5 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		7C7CBBB91B9ED0A1002EC325 /* CTTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTTableViewCell.h; sourceTree = "<group>"; };
+		7C7CBBBA1B9ED0A1002EC325 /* CTTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTTableViewCell.m; sourceTree = "<group>"; };
+		7CE1D1DE1B9FBF1300C8ABE8 /* CTViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTViewController.h; sourceTree = "<group>"; };
+		7CE1D1DF1B9FBF1300C8ABE8 /* CTViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTViewController.m; sourceTree = "<group>"; };
+		7CE1D1E51B9FC15400C8ABE8 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		7CE1D1E61B9FC15400C8ABE8 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,8 +179,14 @@
 				7C7A1C251B9D70A200EA49D5 /* 图文混排 */,
 				7C7A1C031B9D6FBA00EA49D5 /* AppDelegate.h */,
 				7C7A1C041B9D6FBA00EA49D5 /* AppDelegate.m */,
+				7CE1D1E51B9FC15400C8ABE8 /* MainViewController.h */,
+				7CE1D1E61B9FC15400C8ABE8 /* MainViewController.m */,
 				7C7A1C061B9D6FBA00EA49D5 /* ViewController.h */,
 				7C7A1C071B9D6FBA00EA49D5 /* ViewController.m */,
+				7CE1D1DE1B9FBF1300C8ABE8 /* CTViewController.h */,
+				7CE1D1DF1B9FBF1300C8ABE8 /* CTViewController.m */,
+				7C7CBBB91B9ED0A1002EC325 /* CTTableViewCell.h */,
+				7C7CBBBA1B9ED0A1002EC325 /* CTTableViewCell.m */,
 				7C7A1C761B9D82D000EA49D5 /* ImageViewController.h */,
 				7C7A1C771B9D82D000EA49D5 /* ImageViewController.m */,
 				7C7A1C791B9D860400EA49D5 /* WebViewController.h */,
@@ -381,6 +396,7 @@
 				7C7A1C081B9D6FBA00EA49D5 /* ViewController.m in Sources */,
 				7C7A1C7B1B9D860400EA49D5 /* WebViewController.m in Sources */,
 				7C7A1C431B9D70A200EA49D5 /* UIView+frameAdjust.m in Sources */,
+				7CE1D1E01B9FBF1300C8ABE8 /* CTViewController.m in Sources */,
 				7C7A1C721B9D7AB500EA49D5 /* UIImage+WebP.m in Sources */,
 				7C7A1C3E1B9D70A200EA49D5 /* CoreTextUtils.m in Sources */,
 				7C7A1C6F1B9D7AB500EA49D5 /* UIButton+WebCache.m in Sources */,
@@ -399,6 +415,7 @@
 				7C7A1C701B9D7AB500EA49D5 /* UIImage+GIF.m in Sources */,
 				7C7A1C711B9D7AB500EA49D5 /* UIImage+MultiFormat.m in Sources */,
 				7C7A1C021B9D6FBA00EA49D5 /* main.m in Sources */,
+				7CE1D1E71B9FC15400C8ABE8 /* MainViewController.m in Sources */,
 				7C7A1C6E1B9D7AB500EA49D5 /* SDWebImagePrefetcher.m in Sources */,
 				7C7A1C3D1B9D70A200EA49D5 /* CoreTextLinkData.m in Sources */,
 				7C7A1C661B9D7AB500EA49D5 /* MKAnnotationView+WebCache.m in Sources */,
@@ -406,6 +423,7 @@
 				7C7A1C751B9D7AB500EA49D5 /* UIView+WebCacheOperation.m in Sources */,
 				7C7A1C781B9D82D000EA49D5 /* ImageViewController.m in Sources */,
 				7C7A1C6D1B9D7AB500EA49D5 /* SDWebImageManager.m in Sources */,
+				7C7CBBBB1B9ED0A1002EC325 /* CTTableViewCell.m in Sources */,
 				7C7A1C421B9D70A200EA49D5 /* MagnifiterView.m in Sources */,
 				7C7A1C401B9D70A200EA49D5 /* CTFrameParser.m in Sources */,
 			);
@@ -606,6 +624,7 @@
 				7C7A1C211B9D6FBA00EA49D5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7C7A1C221B9D6FBA00EA49D5 /* Build configuration list for PBXNativeTarget "图文混排DemoTests" */ = {
 			isa = XCConfigurationList;
@@ -614,6 +633,7 @@
 				7C7A1C241B9D6FBA00EA49D5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

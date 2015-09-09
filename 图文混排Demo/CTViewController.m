@@ -1,53 +1,49 @@
 //
-//  ViewController.m
+//  CTViewController.m
 //  图文混排Demo
 //
-//  Created by suning on 15/9/7.
+//  Created by suning on 15/9/9.
 //  Copyright (c) 2015年 suning. All rights reserved.
 //
 
-#import "ViewController.h"
-#import "CTDisplayView.h"
-#import "CoreTextData.h"
-#import "CTFrameParser.h"
-#import "CTFrameParserConfig.h"
-#import "SDWebImageManager.h"
-#import "ImageViewController.h"
-#import "CoreTextLinkData.h"
-#import "WebViewController.h"
+#import "CTViewController.h"
 #import "CTTableViewCell.h"
+#import "ImageViewController.h"
+#import "WebViewController.h"
+#import "CoreTextData.h"
+#import "CoreTextImageData.h"
+#import "CoreTextLinkData.h"
+#import "SDWebImageManager.h"
+#import "CTDisplayView.h"
 
-
-@interface ViewController ()
-@property (nonatomic,weak) CTDisplayView *displayView;
+@interface CTViewController ()<UITableViewDataSource,UITableViewDelegate>
+@property (nonatomic,weak) UITableView *tableView;
+@property (nonatomic,copy) NSArray *dataArray;
+@property (nonatomic,strong) NSCache *heightCache;
 @end
 
-@implementation ViewController
+@implementation CTViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [UIColor whiteColor];
-    [self setUpDisplayView];
-    [self setUpUserInterface];
     [self setUpNotification];
+    [self setUpTabelView];
 }
 
-- (void)setUpDisplayView{
-    CTDisplayView *displayView = [[CTDisplayView alloc] initWithFrame:CGRectMake(0, 64,self.view.width , 300)];
-    [self.view addSubview:displayView];
-    self.displayView = displayView;
-}
-
-- (void)setUpUserInterface{
-    CTFrameParserConfig *config = [[CTFrameParserConfig alloc] init];
-    config.width = self.displayView.width;
+- (void)setUpTabelView{
+    UITableView *tableView = [[UITableView alloc] init];
+    tableView.frame = [UIScreen mainScreen].bounds;
+    [self.view addSubview:tableView];
+    self.tableView = tableView;
+    tableView.delegate = self;
+    tableView.dataSource = self;
     
     NSDictionary *dict1 = @{
                             @"type" : @"img",
-                            @"width" : @60,
-                            @"height" : @60,
-                            @"name" : @"http://www.touxiang.cn/uploads/20131114/14-065802_226.jpg"
+                            @"width" : @155,
+                            @"height" : @155,
+                            @"name" : @"http://a0.att.hudong.com/86/78/01300000312265122779782303112.jpg"
                             };
     NSString *str1 = [self stringWithObj:dict1];
     
@@ -71,7 +67,7 @@
                             @"type" : @"img",
                             @"width" : @300,
                             @"height" : @160,
-                            @"name" : @"http://img15.3lian.com/2015/f2/50/d/75.jpg"
+                            @"name" : @"http://a2.att.hudong.com/81/77/01300000312265122779776120723.jpg"
                             };
     NSString *str4 = [self stringWithObj:dict4];
     
@@ -79,7 +75,7 @@
                             @"type" : @"img",
                             @"width" : @300,
                             @"height" : @160,
-                            @"name" : @"http://img3.3lian.com/2013/s2/11/d/53.jpg"
+                            @"name" : @"http://pic23.nipic.com/20120821/10310360_120042319149_2.jpg"
                             };
     NSString *str5 = [self stringWithObj:dict5];
     
@@ -99,17 +95,63 @@
                             };
     NSString *str7 = [self stringWithObj:dict7];
     
-    NSString *str = [NSString stringWithFormat:@"[%@,%@,%@,%@,%@,%@,%@]",str1,str2,str3,str4,str5,str6,str7];
-    CoreTextData *data = [CTFrameParser pareeJSONString:str config:config];
-    self.displayView.data = data;
-    self.displayView.height = data.height;
-    self.displayView.backgroundColor = [UIColor whiteColor];
+    
+    self.dataArray = @[[NSString stringWithFormat:@"[%@,%@,%@,%@,%@]",str1,str2,str3,str4,str5],[NSString stringWithFormat:@"[%@,%@,%@,%@,%@]",str1,str2,str3,str4,str6],[NSString stringWithFormat:@"[%@,%@,%@,%@,%@]",str1,str2,str3,str4,str7],[NSString stringWithFormat:@"[%@,%@,%@,%@,%@,%@]",str1,str2,str3,str4,str5,str6],[NSString stringWithFormat:@"[%@,%@,%@,%@,%@,%@,%@]",str1,str2,str3,str4,str5,str6,str7]];
 }
 
 - (NSString *)stringWithObj:(id)obj{
     NSData *data = [NSJSONSerialization dataWithJSONObject:obj options:0 error:NULL];
     return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
 }
+
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return self.dataArray.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    static NSString *reuseIdentifier = @"reuseIdentifier";
+    CTTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
+    if (cell == nil){
+        cell = [[CTTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier];
+    }
+    cell.json = self.dataArray[indexPath.row];
+    
+    return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    CGFloat height = [[self.heightCache objectForKey:@(indexPath.row)] floatValue];
+    if (height != 0){
+        return height;
+    }
+    
+    static NSString *reuseIdentifier = @"reuseIdentifier";
+    CTTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
+    if (cell == nil){
+        cell = [[CTTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier];
+    }
+    height = [cell rowHeight:self.dataArray[indexPath.row]];
+    
+    [self.heightCache setObject:@(height) forKey:@(indexPath.row)];
+    
+    return height;
+}
+
+- (NSCache *)heightCache{
+    if (_heightCache == nil){
+        _heightCache = [[NSCache alloc] init];
+    }
+    return _heightCache;
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    
+    [self.heightCache removeAllObjects];
+}
+
 
 - (void)setUpNotification{
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(imagePressed:) name:CTDisplayViewImagePressedNotification object:nil];
@@ -133,8 +175,5 @@
     [self presentViewController:naviVC animated:YES completion:nil];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-}
 
 @end

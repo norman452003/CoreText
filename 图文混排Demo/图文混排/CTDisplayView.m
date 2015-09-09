@@ -191,10 +191,10 @@ typedef enum CTDisplayViewState : NSInteger {
     UIGestureRecognizer *longPressRecognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self
                                                     action:@selector(userLongPressedGuestureDetected:)];
     [self addGestureRecognizer:longPressRecognizer];
-
-    UIGestureRecognizer *panRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self
-                                                    action:@selector(userPanGuestureDetected:)];
-    [self addGestureRecognizer:panRecognizer];
+//TODO: 这里被我注释了，如果外面是可以滚动的视图，那么这里添加pan手势会导致事件被这边响应。
+//    UIGestureRecognizer *panRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self
+//                                                    action:@selector(userPanGuestureDetected:)];
+//    [self addGestureRecognizer:panRecognizer];
 
     self.userInteractionEnabled = YES;
 }
